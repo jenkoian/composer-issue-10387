@@ -1,0 +1,11 @@
+{
+    "name": "jenkoian/composer-issue-10387",
+    "description": "Reproducer for composer issue #10387",
+    "license": "MIT",
+    "require": {
+        "php": "^7.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9"
+    }
+}

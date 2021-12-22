@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+rm -rf vendor
+bin/composer.phar selfupdate 2.2.0
+bin/composer.phar install
+vendor/bin/phpunit
