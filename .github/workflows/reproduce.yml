@@ -9,8 +9,9 @@ jobs:
     strategy:
       matrix:
         php: ['7.4', '8.0', '8.1']
+        process_isolation: ['--process-isolation', '']
       fail-fast: false
-    name: PHP ${{ matrix.php }}
+    name: PHP ${{ matrix.php }} / Process Isolation ${{ matrix.process_isolation }}
     runs-on: ubuntu-18.04
     timeout-minutes: 2
     steps:
@@ -43,7 +44,7 @@ jobs:
           php -r "echo 'stream_wrapper_register() exists: '; var_dump(function_exists('stream_wrapper_register'));"
 
       - name: Working reproduction
-        run: bin/works
+        run: PROCESS_ISOLATION=${{ matrix.process_isolation }} bin/works
 
       - name: Breaking reproduction
-        run: bin/breaks
+        run: PROCESS_ISOLATION=${{ matrix.process_isolation }} bin/breaks

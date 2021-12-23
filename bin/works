@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
+PROCESS_ISOLATION="${PROCESS_ISOLATION}"
+
 rm -rf vendor
 rm composer.lock
 bin/composer.phar selfupdate 2.1.12
 bin/composer.phar update
-vendor/bin/phpunit
+vendor/bin/phpunit "$PROCESS_ISOLATION"
