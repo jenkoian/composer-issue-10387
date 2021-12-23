@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 rm -rf vendor
+rm composer.lock
 bin/composer.phar selfupdate 2.1.12
-bin/composer.phar install
+bin/composer.phar update
 vendor/bin/phpunit
