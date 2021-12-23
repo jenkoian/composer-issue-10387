@@ -40,7 +40,7 @@ jobs:
         run: |
           php --version
           php -m
-          php -r "var_dump(function_exists('stream_wrapper_register'));"
+          php -r "echo 'stream_wrapper_register() exists: '; var_dump(function_exists('stream_wrapper_register'));"
 
       - name: Working reproduction
         run: bin/works
