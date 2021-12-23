@@ -4,6 +4,6 @@ PROCESS_ISOLATION="${PROCESS_ISOLATION}"
 
 rm -rf vendor
 rm composer.lock
-bin/composer.phar selfupdate 2.2.1
+bin/composer.phar selfupdate --snapshot
 bin/composer.phar update
 vendor/bin/phpunit "$PROCESS_ISOLATION"
