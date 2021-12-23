@@ -40,9 +40,6 @@ jobs:
         run: |
           php --version
           php -m
-          composer --version
-          composer info roots/wordpress
-          mysql --version
 
       - name: Working reproduction
         run: bin/works
